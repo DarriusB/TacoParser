@@ -16,10 +16,11 @@ namespace LoggingKata
 
             // Log and error if you get 0 lines and a warning if you get 1 line
 
-            logger.LogInfo($"Lines: ");
 
 
             var lines = File.ReadAllLines(csvPath);
+            logger.LogInfo($"Lines: {lines[0]}");
+
             var parser = new TacoParser();
 
             var locations = lines.Select(parser.Parse).ToArray();
